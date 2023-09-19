@@ -1,0 +1,69 @@
+.header{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* padding: 10px; */
+    margin-bottom: 10px;
+    border: 1px solid #eaecf1;
+    text-align: center;
+    box-shadow: 10px 0 10px #afb0b2;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    /* width: 100%; */
+    z-index: 5;
+    
+}
+.header-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    height: 4rem;
+    padding: 1.5rem;
+}
+.logo{
+    font-size: 2.4rem;
+    color: rgb(17, 12, 74);
+}
+.logo > a{
+    text-decoration: none;
+    color: rgb(17, 12, 74);
+}
+.logo > a > img{
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 0.5rem;
+    border-radius: 2rem;
+}
+.logo > a > span{
+    color: rgb(255, 0, 0);
+    font-weight: bolder;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navlist{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+}
+.navigation{
+    text-decoration: none;
+    color: rgb(17, 12, 74);
+    font-size: 1.4rem;
+    flex-direction: row;
+    align-items: center;
+}
+@media screen and (min-width:768px) {
+    .nav > button{
+        height: 0;
+    }
+    
+}

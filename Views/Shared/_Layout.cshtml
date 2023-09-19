@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - assignment1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/assignment1.styles.css" asp-append-version="true" />
+
+    @* font awesome icons *@
+    <script src="https://kit.fontawesome.com/694cdee837.js" crossorigin="anonymous"></script>
+    @* google fonts *@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@400;500;700;800&family=Playfair+Display:wght@400;600;800&family=Yeseva+One&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-nav">
+            <div class="logo">
+                <a id="shopName" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/assets/logo2.png" alt=""></a>
+                <a id="shopName" asp-area="" asp-controller="Home" asp-action="Index"><span>SHOP</span>LANE</a>
+            </div>
+            <div class="nav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class=" navbar-collapse collapse d-sm-inline-flex justify-content-between navigation">
+                    <ul class="navbar-nav flex-grow-1 navlist">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Brief">Brief</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-nav flex-grow-1 navlist">
+                        <i class="fa-solid fa-cart-shopping special-links"></i>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login"><i
+                                class="fa-solid fa-user special-links"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="footer-data">
+            <div class="first-col">
+                <h4>Contact</h4>
+                <p><strong>Address :</strong>175 Johnson St.</p>
+                <p><strong>Phone :</strong> +1 705-970-XXXX</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="second-col">
+                <h4>About</h4>
+                <a href="#">About US</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact Us</a>
+                <a href="#">About US</a>
+            </div>
+
+            <div class="third-col">
+                <h4>MY Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2023 - MyFirstSite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
