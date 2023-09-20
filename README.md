@@ -1,4 +1,4 @@
-# assignment1 - Asp.NET - VUV collection
+# assignment1 - Asp.NET - VUV collections
 # Group members :
 1. Vansh Gautam - FullStack Developer
 2. Udit Gami - FullStack Developer
