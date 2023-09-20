@@ -1,33 +1,45 @@
 .footer {
-    width: 100%;
-    background: rgb(0, 1, 43);
-    color: #fff;
-    padding: 0.5rem;
-    text-align: center;
-    bottom: 0;
-    position: absolute;
-  }
-  .footer > .logo {
-    padding: 1em;
-  }
-  .footer > .logo > a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 2.4rem;
-  }
-  .footer-data {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    justify-items: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .footer-data > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* width: 33.3vw; */
-  }
-  
+  width: 100%;
+  background: rgb(0, 1, 43);
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  bottom: 0;
+  position: absolute;
+}
+.footer > .logo {
+  padding: 1em;
+}
+.footer > .logo > a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.4rem;
+}
+.footer-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  color: aliceblue;
+}
+.footer-data > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 33.3vw; */
+}
+
+.footer-data > div > a {
+    position: relative;
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 1.4rem;
+  transition: 3s ease-in-out;
+}
+.footer-data > div > a:hover{
+    color: rgb(23, 188, 226);
+    left: 1rem;
+}

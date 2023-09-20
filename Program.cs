@@ -21,12 +21,14 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "Brief",
+    pattern: "brief",
+    defaults: new { controller = "Home", action = "Brief" }
+);
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
-);
-app.MapControllerRoute(
-    name: "brief",
-    pattern: "{controller=Home}/{action=Brief}/{id?}"
 );
 
 app.Run();
