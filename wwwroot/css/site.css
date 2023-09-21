@@ -23,7 +23,7 @@ body {
 }
 
 .banner{
-    background: url("~/assets/background.jpeg");
+    background-image: url();
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,6 +33,40 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.banner > h1{
+    font-size: 4rem;
+    color:#330867;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    animation: intro 3s infinite;
+}
+
+@keyframes intro {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    25%{
+        opacity: 0.25;
+        transform: scale(0.5rem);
+    }
+    50%{
+        opacity: 0.5;
+        transform: scale(1rem);
+    }
+    75%{
+        opacity: 0.75;
+        transform: scale(2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(3rem);
+    }
+  
 }
 
 .main_title > h1{
