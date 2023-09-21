@@ -38,11 +38,12 @@ body {
 .banner > h1{
     font-size: 4rem;
     color:#330867;
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
     text-align: center;
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    animation: intro 3s infinite;
+    animation: intro 5s infinite;
 }
 
 @keyframes intro {
@@ -55,11 +56,11 @@ body {
         transform: scale(0.5rem);
     }
     50%{
-        opacity: 0.5;
+        opacity: 0.65;
         transform: scale(1rem);
     }
     75%{
-        opacity: 0.75;
+        opacity: 0.95;
         transform: scale(2rem);
     }
     100%{
