@@ -65,3 +65,40 @@ body {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
+info tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.info tr > td{
+    font-weight: 500px;
+}
+.info tr > td > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.info tr > td > div > img{
+  height: 15rem;
+  width: 16rem;
+  margin-right: 0.5rem;
+}
+.info tr > td >ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#proposal{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 3rem;
+}
