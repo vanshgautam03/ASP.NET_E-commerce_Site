@@ -23,7 +23,7 @@ body {
 }
 
 .banner{
-    background-image: url();
+    background-image: url("https://images.pexels.com/photos/3965548/pexels-photo-3965548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -125,11 +125,4 @@ info tr{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-top: 3rem;
-}
-
-body {
-  background-image: url("https://images.pexels.com/photos/3965548/pexels-photo-3965548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-repeat: no-repeat;
-  background-size: cover; 
-  background-color: #f0f0f0;
 }
