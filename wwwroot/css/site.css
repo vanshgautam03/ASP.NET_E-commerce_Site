@@ -76,17 +76,6 @@ info tr{
 .info tr > td{
     font-weight: 500px;
 }
-.info tr > td > div{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.info tr > td > div > img{
-  height: 15rem;
-  width: 16rem;
-  margin-right: 0.5rem;
-}
 .info tr > td >ul{
     list-style-type: none;
     display: flex;
