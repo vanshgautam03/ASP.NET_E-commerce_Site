@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
-    height: 4rem;
+    height: 5rem;
     padding: 1.5rem;
 }
 .logo{
@@ -31,9 +31,9 @@
     color: rgb(17, 12, 74);
 }
 .logo > a > img{
-    height: 6.5rem;
-    width: 5.5rem;
-    border-radius: 2rem;
+    height: 2em;
+    width: 2em;
+    border-radius: 3rem 3rem 3rem 3rem;
 }
 .logo > a > span{
     color: rgb(255, 0, 0);
