@@ -267,6 +267,7 @@ a {
 }
 
 a:hover {
-  background-color: #ccc;
-  text-decoration: underline;
+  background-color: cornsilk;
+  text-decoration: dotted;
+  text-decoration-style: double;
 }
