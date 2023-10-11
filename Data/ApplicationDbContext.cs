@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 
+using project.Models;
+
 namespace project.Models
 {
     public class ApplicationDbContext : DbContext
