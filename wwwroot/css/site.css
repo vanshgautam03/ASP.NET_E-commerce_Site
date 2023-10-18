@@ -40,14 +40,24 @@ body {
 }
 
 .banner > h1 {
-  font-size: 4rem;
+  font-size: 2rem;
   color: #330867;
   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
   text-align: center;
   margin-bottom: 1rem;
   font-family: "Playfair Display", serif;
-  font-weight: 700;
-  animation: intro 5s infinite;
+  font-weight: 500;
+  animation: intro 3s ease-out;
+}
+.banner > h2 {
+  font-size: 2rem;
+  color: #330867;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  animation: intro 3s ease-in;
 }
 
 @keyframes intro {
@@ -129,4 +139,135 @@ info tr {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-top: 3rem;
+}
+/* Apply styling to the main container */
+.container {
+  margin-top: 20px;
+}
+
+/* Style the title */
+h1 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+}
+
+/* Style the form */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Style form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Style labels */
+.control-label {
+  font-weight: bold;
+}
+
+/* Style form inputs and select */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style validation error messages */
+.text-danger {
+  color: #ff0000;
+}
+
+/* Style the "Create" button */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Style the "Back to List" link */
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* Apply styling to the main container */
+.container {
+  margin-top: 20px;
+}
+
+/* Style the page title */
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+/* Style the subheading */
+h4 {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+}
+
+/* Style the form and its components */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.control-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style validation error messages */
+.text-danger {
+  color: #ff0000;
+}
+
+/* Style the submit button */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Style the "Back to List" link */
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  background-color: cornsilk;
+  text-decoration: dotted;
+  text-decoration-style: double;
 }
