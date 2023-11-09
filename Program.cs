@@ -1,3 +1,4 @@
+using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using project.Models;
@@ -12,8 +13,17 @@ var connectionString = builder.Configuration.GetConnectionString("Default") ?? t
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(connectionString));
 
+// enabling sessions
+builder.Services.AddSession(Option => {
+    Option.IdleTimeout = TimeSpan.FromMinutes(30);
+    Option.Cookie.HttpOnly = true;
+    Option.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
+
+// turn on session
+app.UseSession();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

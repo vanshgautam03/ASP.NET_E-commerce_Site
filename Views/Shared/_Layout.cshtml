@@ -41,19 +41,23 @@
                         </li>
                         
                             <a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Index">Department</a>
-                        </li>
+                        </li>+
+                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Brief">Brief</a>
                         </li>
-                        <li class="nav-item">
                     </ul>
                     <div class="navbar-nav flex-grow-1 navlist">
-                        <i class="fa-solid fa-cart-shopping special-links"></i>
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login"><i
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Carts" asp-action="Index"><i class="fa-solid fa-cart-shopping special-links"></i> My Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login"><i
                                 class="fa-solid fa-user special-links"></i></a>
+                        </li>
                     </div>
                 </div>
             </div>

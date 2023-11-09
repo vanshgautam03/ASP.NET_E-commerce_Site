@@ -73,6 +73,11 @@
                 @Html.DisplayFor(modelItem => item.Department.Name)
             </td>
             <td>
+                <form asp-controller="Carts" asp-action="AddToCart">
+                    <input type="hidden" name="productId" value="@item.ItemId">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type ="submit" value = "Quick Add to Cart" class="btn btn-success">
+                </form>
                 <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ItemId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
