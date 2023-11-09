@@ -13,6 +13,6 @@ namespace project.Models
         [StringLength(1000)]
         public string? Description { get; set; } = String.Empty;
 
-        public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+        public virtual ICollection<Product>? Products { get; set; } 
     }
 }

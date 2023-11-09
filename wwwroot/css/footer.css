@@ -33,13 +33,13 @@
 }
 
 .footer-data > div > a {
-    position: relative;
+  position: relative;
   text-decoration: none;
   color: aliceblue;
   font-size: 1.4rem;
   transition: 3s ease-in-out;
 }
-.footer-data > div > a:hover{
-    color: rgb(23, 188, 226);
-    left: 1rem;
+.footer-data > div > a:hover {
+  color: rgb(24, 188, 226);
+  left: 1rem;
 }

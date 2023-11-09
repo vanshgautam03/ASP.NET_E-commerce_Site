@@ -1,0 +1,47 @@
+@model project.Models.Cart
+
+@{
+    ViewData["Title"] = "My Cart";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <dl class="row">
+    </dl>
+
+    @if (Model.cartItems != null)
+    {
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach(var cartItem in Model.cartItems)
+                {
+                    <tr>
+                        <td>@cartItem.Product.Name</td>
+                        <td>@cartItem.Quantity</td>
+                        <td>@cartItem.Product.Price</td>
+                        <td>
+                            @((decimal)(cartItem.Quantity * cartItem.Product.Price))
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td colspan="3">@(Model.cartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Product.Price)))</td>
+                </tr>
+            </tfoot>
+        </table>
+    }
+</div>
