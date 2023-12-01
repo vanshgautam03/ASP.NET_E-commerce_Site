@@ -1,6 +1,8 @@
-using Google.Protobuf.WellKnownTypes;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Identity.UI;
+
+
 using project.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +22,14 @@ builder.Services.AddSession(Option => {
     Option.Cookie.IsEssential = true;
 });
 
+// Adding identity service
+builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
+// Add application services.
+builder.Services.AddTransient<DbInitializer>();
+
+
 var app = builder.Build();
+
 
 // turn on session
 app.UseSession();
@@ -38,6 +47,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Setup authentication and authorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -50,5 +61,16 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
+
+app.MapRazorPages();
+
+// Seed roles
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using var scope = scopeFactory.CreateScope();
+// var initializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
+// await DbInitializer.Initialize(
+//     scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>(),
+//     scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>()
+// );
 
 app.Run();
