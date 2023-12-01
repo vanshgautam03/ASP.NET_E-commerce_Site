@@ -1,6 +1,6 @@
-using Google.Protobuf.WellKnownTypes;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
+
 using project.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +20,12 @@ builder.Services.AddSession(Option => {
     Option.Cookie.IsEssential = true;
 });
 
+// Adding identity service
+builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
+
+
 var app = builder.Build();
+
 
 // turn on session
 app.UseSession();
@@ -38,6 +43,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Setup authentication and authorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
