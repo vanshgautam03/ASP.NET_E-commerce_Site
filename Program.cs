@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.UI;
+
 
 using project.Models;
 
@@ -22,6 +24,8 @@ builder.Services.AddSession(Option => {
 
 // Adding identity service
 builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
+// Add application services.
+builder.Services.AddTransient<DbInitializer>();
 
 
 var app = builder.Build();
@@ -57,5 +61,16 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
+
+app.MapRazorPages();
+
+// Seed roles
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using var scope = scopeFactory.CreateScope();
+// var initializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
+// await DbInitializer.Initialize(
+//     scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>(),
+//     scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>()
+// );
 
 app.Run();

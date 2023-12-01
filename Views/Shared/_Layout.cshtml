@@ -26,7 +26,8 @@
     <header class="header">
         <div class="header-nav">
             <div class="logo">
-                <a id="shopName" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/assets/shopimage.png" alt=""></a>
+                <a id="shopName" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/assets/shopimage.png"
+                        alt=""></a>
                 <a id="shopName" asp-area="" asp-controller="Home" asp-action="Index"><span>VUV</span>Collections</a>
             </div>
             <div class="nav">
@@ -39,11 +40,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Index">Department</a>
+
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Departments"
+                            asp-action="Index">Department</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Products"
+                                asp-action="Index">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Brief">Brief</a>
@@ -51,12 +54,39 @@
                     </ul>
                     <div class="navbar-nav flex-grow-1 navlist">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Carts" asp-action="Index"><i class="fa-solid fa-cart-shopping special-links"></i> My Cart</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Carts" asp-action="Index"><i
+                                    class="fa-solid fa-cart-shopping special-links"></i> My Cart</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login"><i
-                                class="fa-solid fa-user special-links"></i></a>
-                        </li>
+                        <ul class="registration">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" class="nav-link text-dark">
+                                        Hello @User.Identity.Name!
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a asp-area="Identity" asp-page="/Account/Logout" class="nav-link text-dark">
+                                        Logout
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a asp-area="Identity" asp-page="/Account/Register" class="nav-link text-dark">
+                                        Register
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a asp-area="Identity" asp-page="/Account/Login" class="nav-link text-dark">
+                                        Login
+                                    </a>
+                                </li>
+                            }
+                        </ul>
                     </div>
                 </div>
             </div>
