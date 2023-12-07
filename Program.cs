@@ -1,7 +1,6 @@
+using assignment1.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 
 using project.Models;
@@ -30,7 +29,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>()
 // Add application services.
 builder.Services.AddTransient<DbInitializer>();
 
-
+builder.Services.AddScoped<CartService>();
 var app = builder.Build();
 
 
