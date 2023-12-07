@@ -72,6 +72,9 @@
         <input type ="number" name="quantity" step="1" min="1" max="99999" value="1">
         <input type="submit" value="Add to  Cart" class="btn btn-success">
     </form>
-    <a asp-action="Edit" asp-route-id="@Model?.ItemId">Edit</a> |
+    @if(User.IsInRole("Admin")){
+        <a asp-action="Edit" asp-route-id="@Model?.ItemId">Edit</a>
+        <span>&nbsp;|&nbsp;</span>
+    }
     <a asp-action="Index">Back to List</a>
 </div>
