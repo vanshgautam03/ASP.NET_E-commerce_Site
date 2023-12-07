@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 
 using project.Models;
@@ -22,8 +23,10 @@ builder.Services.AddSession(Option => {
     Option.Cookie.IsEssential = true;
 });
 
-// Adding identity service
-builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
+// Adding identity service and roles
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 // Add application services.
 builder.Services.AddTransient<DbInitializer>();
 
@@ -67,10 +70,10 @@ app.MapRazorPages();
 // Seed roles
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 using var scope = scopeFactory.CreateScope();
-// var initializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
-// await DbInitializer.Initialize(
-//     scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>(),
-//     scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>()
-// );
+var initializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
+await DbInitializer.Initialize(
+    scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>(),
+    scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>()
+);
 
 app.Run();
