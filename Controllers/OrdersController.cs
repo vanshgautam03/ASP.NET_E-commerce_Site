@@ -1,13 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using assignment1.Models;
-using assignment1.Services;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using project.Models;
-
-namespace assignment1.Models
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
+using assignment1.Models;
+namespace project.Models
 {
     public class OrdersController : Controller
     {

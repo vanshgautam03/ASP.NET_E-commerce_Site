@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using project.Models;
 
-namespace assignment1.Models
+namespace project.Models
 {
     public class CartService
     {

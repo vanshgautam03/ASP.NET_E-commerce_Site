@@ -1,4 +1,4 @@
-@model IEnumerable<assignment1.Models.Order>
+@model IEnumerable<project.Models.Order>
 
 @{
     ViewData["Title"] = "Index";
@@ -40,10 +40,3 @@
 }
     </tbody>
 </table>
-@if (Model.CartItems.Count > 0)
-{
-    <a class="btn btn-success" asp-asp-controller="Orders" asp-action=" Checkout">
-        Checkout
-
-    </a>
-}
