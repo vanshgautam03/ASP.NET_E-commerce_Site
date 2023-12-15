@@ -30,6 +30,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>()
 builder.Services.AddTransient<DbInitializer>();
 
 builder.Services.AddScoped<CartService>();
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 var app = builder.Build();
 
 
