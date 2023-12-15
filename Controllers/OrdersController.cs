@@ -26,20 +26,27 @@ namespace project.Models
 
             var cart = _cartService.GetCart();
 
-            if (cart == null) {
+            if (cart == null)
+            {
                 return NotFound();
             }
 
-            
-            var order = new Order {
-                UserId = userId
+
+            var order = new Order
+            {
+                /*hear some errors not match with sir code*/
+
+                UserId = userId,
+                //  Total = cart.cartItems.Sum(cartItem => cartItem.Quantity * cartItem.Product.Price)
+                // OrderItems = new List<OrderItem>() v create
             };
 
             var orderItems = new List<OrderItem>();
 
-            foreach(var cartItem in cart.cartItems)
+            foreach (var cartItem in cart.cartItems)
             {
-                var orderItem = new OrderItem {
+                var orderItem = new OrderItem
+                {
                     OrderId = order.Id,
                     ProductName = cartItem.Product.Name,
                     Quantity = cartItem.Quantity,
@@ -50,7 +57,7 @@ namespace project.Models
             }
 
             order.OrderItems = orderItems;
-            order.Total = cart.cartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Product.Price)); 
+            order.Total = cart.cartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Product.Price));
 
             return View("Details", order);
         }
