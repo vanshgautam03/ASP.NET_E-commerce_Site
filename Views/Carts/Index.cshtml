@@ -10,7 +10,7 @@
     <dl class="row">
     </dl>
 
-    @if (Model.cartItems != null)
+    @if (Model.CartItems != null)
     {
         <table class="table table-striped table-bordered">
             <thead>
@@ -23,7 +23,7 @@
             </thead>
 
             <tbody>
-                @foreach(var cartItem in Model.cartItems)
+                @foreach(var cartItem in Model.CartItems)
                 {
                     <tr>
                         <td>@cartItem.Product.Name</td>
@@ -39,9 +39,15 @@
             <tfoot>
                 <tr>
                     <td>Total</td>
-                    <td colspan="3">@(Model.cartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Product.Price)))</td>
+                    <td colspan="3">@(Model.CartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Product.Price)))</td>
                 </tr>
             </tfoot>
         </table>
+    }
+    @if (Model.CartItems.Count > 0)
+    {
+        <a class="btn btn-success" asp-controller="Orders" asp-action="Checkout">
+            Checkout
+        </a>
     }
 </div>

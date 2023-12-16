@@ -33,6 +33,5 @@ namespace project.Models
 
         [ForeignKey("DepartmentId")]
         public virtual Department? Department { get; set; }
-        public int Id { get; internal set; }
     }
 }

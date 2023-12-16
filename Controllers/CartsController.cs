@@ -26,13 +26,13 @@ namespace assignment1.Models
                 return NotFound();
             }
 
-            if (cart.cartItems.Count > 0)
+            if (cart.CartItems.Count > 0)
             {
-                foreach (var cartItem in cart.cartItems)
+                foreach (var cartItem in cart.CartItems)
                 {
                     var product = await _context.Products
                         .Include(p => p.Department)
-                        .FirstOrDefaultAsync(p => p.Id == cartItem.ProductId);
+                        .FirstOrDefaultAsync(p => p.ItemId == cartItem.ProductId);
 
                     if (product != null)
                     {
@@ -54,7 +54,7 @@ namespace assignment1.Models
                 return NotFound();
             }
 
-            var cartItem = cart.cartItems.Find(cartItem => cartItem.ProductId == productId);
+            var cartItem = cart.CartItems.Find(cartItem => cartItem.ProductId == productId);
 
             if (cartItem != null && cartItem.Product != null)
             {
@@ -63,14 +63,14 @@ namespace assignment1.Models
             else
             {
                 var product = await _context.Products
-                    .FirstOrDefaultAsync(p => p.Id == productId);
+                    .FirstOrDefaultAsync(p => p.ItemId == productId);
 
                 if (product == null) {
                     return NotFound();
                 }
 
                 cartItem = new CartItem { ProductId = productId, Quantity = quantity, Product = product };
-                cart.cartItems.Add(cartItem);
+                cart.CartItems.Add(cartItem);
             }
 
 
@@ -89,11 +89,11 @@ namespace assignment1.Models
                 return NotFound();
             }
 
-            var cartItem = cart.cartItems.Find(cartItem => cartItem.ProductId == productId);
+            var cartItem = cart.CartItems.Find(cartItem => cartItem.ProductId == productId);
 
             if (cartItem != null)
             {
-                cart.cartItems.Remove(cartItem);
+                cart.CartItems.Remove(cartItem);
 
                 _cartService.SaveCart(cart);
             }
