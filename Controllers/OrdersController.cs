@@ -177,7 +177,7 @@ namespace project.Models
 
             await _context.AddAsync(order);
             await _context.SaveChangesAsync();
-            
+
             _cartService.DestroyCart();
 
             return RedirectToAction("Details", new { id = order.Id });

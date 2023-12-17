@@ -11,7 +11,7 @@ using project.Models;
 namespace assignment1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231216162510_Initial")]
+    [Migration("20231217012653_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
