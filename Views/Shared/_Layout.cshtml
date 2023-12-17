@@ -60,6 +60,11 @@
                         @if (User.Identity.IsAuthenticated)
                             {
                                 <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Orders" asp-action="Index">
+                                        Orders
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a asp-area="Identity" asp-page="/Account/Manage/Index" class="nav-link text-dark">
                                         Hello @User.Identity.Name!
                                     </a>
